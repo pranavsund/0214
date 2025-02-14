@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From, Pranav</title>
+    <style>
+        body {
+            background-color: #f5ebe0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #ff6b81;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ffccd5;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            color: #d6336c;
+        }
+        #yesButton {
+            transition: all 0.3s ease;
+        }
+        .hidden {
+            display: none;
+        }
+        #container {
+            margin-top: 50px;
+        }
+        #secretBox {
+            border: 2px dashed #ff6b81;
+            padding: 20px;
+            margin-top: 20px;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff5f8;
+            color: #d6336c;
+            font-size: 24px;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 10%;
+            height: 10%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Will you be my valentine, Neha?</h1>
+        <div class="buttons">
+            <button id="yesButton" onclick="sayYes()">Yes</button>
+            <button id="noButton" onclick="sayNo()">No</button>
+        </div>
+        <p id="noText" class="hidden">Why would you say no? :(</p>
+    </div>
+
+    <script>
+        function sayNo() {
+            let yesButton = document.getElementById('yesButton');
+            yesButton.style.fontSize = parseInt(window.getComputedStyle(yesButton).fontSize) + 5 + 'px';
+            document.getElementById('noText').classList.remove('hidden');
+        }
+
+        function sayYes() {
+            document.body.innerHTML = `
+                <h1>Good!</h1>
+                <h2>Happy 11 Month Anniversary! Here are some of my favorite pictures of us.</h2>
+                <button onclick="revealSecret()">Click to reveal a secret :)</button>
+                <div id="secretBox" class="hidden">Dear Neha, I love you so much and I'm so happy that you're my Valentine (again). And, I'm so happy that it's now been 11 months. I'm the luckiest man ever and I'm very grateful that I get to talk to you and see you everyday even if it's not in person. I know the past few months have been difficult but everytime we see each other in person I'm reminded of why long distance is worth it, because you make my life better. More importantly, you make me a better person and push me to do the things I need to do and to work on myself. I can't wait to get married to you in our late 20s and have a pet snow leopard. I could go on and on about how pretty and amazing you are, but as every month passes I also appreciate how you're always there for me no matter for what, and I promise I'll always be there for you too. I can't wait to see all the amazing things you do this year, and to have the best summer together. And, I miss your face. Happy Valentine's Day <3</div>
+                <div class="image-container">
+                    <img src="image1.png" alt="Us">
+                    <img src="image2.png" alt="Us">
+                    <img src="image3.png" alt="Us">
+                    <img src="image4.png" alt="Us">
+                </div>
+            `;
+        }
+
+        function revealSecret() {
+            document.getElementById('secretBox').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
